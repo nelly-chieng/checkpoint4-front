@@ -36,3 +36,46 @@
     transform: rotate(360deg);
   }
 }
+
+.bigTitle {
+  font-family: 'Parisienne';
+  font-size: 4rem;
+}
+
+.footer {
+  position: absolute;
+  width: 100%;
+  background-color: #282c34;
+  color: white;
+}
+
+.picBg {
+  height: 50vh;
+  background-repeat: no-repeat;
+  background-size: auto;
+  margin-bottom: 10px;
+}
+
+.picBg1 {
+  background-image: url(./images/jungle.png);
+}
+
+.picBg2 {
+  background-image: url(./images/tontonsFlingueurs.png);
+}
+
+.picBg3 {
+  background-image: url(./images/toutFeuTouFlamme.png);
+}
+
+.picBg4 {
+  background-image: url(./images/hauteVoltige.png);
+}
+
+.picBg5 {
+  background-image: url(./images/magicLand.png);
+}
+
+.picBg6 {
+  background-image: url(./images/elasticMan.png);
+}
