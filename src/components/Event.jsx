@@ -13,13 +13,13 @@ const useStyles = makeStyles({
   },
   title: {
     position: 'relative',
-    top: '-65px',
+    top: '-6.5vw',
     textAlign: 'left',
     zIndex: 2,
     color: 'white',
     margin: 0,
     fontFamily: 'Poiret One',
-    fontSize: '4rem',
+    fontSize: '6vw',
     height: 0,
   },
   link: {
