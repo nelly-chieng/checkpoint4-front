@@ -9,7 +9,6 @@ const useStyles = makeStyles({
     color: 'white',
     position: 'absolute',
     width: '100%',
-    height: '10%',
     textAlign: 'right',
   },
   logoWcs: {
