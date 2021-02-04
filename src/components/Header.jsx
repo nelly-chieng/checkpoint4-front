@@ -8,7 +8,7 @@ import Tab from '@material-ui/core/Tab';
 // material UI css
 const useStyles = makeStyles({
   root: {
-    marginBottom: '50px',
+    marginBottom: 0,
     backgroundColor: '#292f36',
     color: 'white',
   },

@@ -17,7 +17,7 @@ function App() {
             <Route exact path="/" component={Event} />
             <Route path="/reservation" component={Reservation} />
             <Route path="/aboutUs" component={AboutUs} />
-            <Route path="/events/:id" component={EventPage} />
+            <Route path="/event/:id" component={EventPage} />
           </Switch>
           <Footer />
         </BrowserRouter>

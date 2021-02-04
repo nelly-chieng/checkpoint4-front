@@ -1,10 +1,29 @@
 import { makeStyles, Paper } from '@material-ui/core';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles({
   picBig: {
     width: '100%',
+    heigth: '100%',
+  },
+  banner: {
+    backgroundColor: '#292F35',
+  },
+  title: {
+    position: 'relative',
+    top: '-65px',
+    textAlign: 'left',
+    zIndex: 2,
+    color: 'white',
+    margin: 0,
+    fontFamily: 'Poiret One',
+    fontSize: '4rem',
+    height: 0,
+  },
+  link: {
+    textDecoration: 'none,',
   },
 });
 
@@ -17,27 +36,23 @@ function Event() {
   useEffect(() => {
     axios.get(`${URL_API}/spectacles`).then((res) => {
       setSpectacles(res.data);
-      console.log(res.data);
     });
   }, []);
 
   return (
     <>
       {spectacles.map((spectacle) => (
-        <Paper>
-          <img
-            className={classes.picBig}
-            src={spectacle.imgUrl}
-            alt="magic pic"
-          />
+        <Paper className={classes.banner}>
+          <Link className={classes.link} to={`/event/${spectacle.id}`}>
+            <img
+              className={classes.picBig}
+              src={spectacle.imgUrl}
+              alt="magic pic"
+            />
+          </Link>
+          <p className={classes.title}>{spectacle.name}</p>
         </Paper>
       ))}
-      {/* <Paper className="picBg picBg1">1</Paper>
-  <Paper className="picBg picBg2">2</Paper>
-  <Paper className="picBg picBg3">3</Paper>
-  <Paper className="picBg picBg4">4</Paper>
-  <Paper className="picBg picBg5">5</Paper>
-  <Paper className="picBg picBg6">6</Paper> */}
     </>
   );
 }
