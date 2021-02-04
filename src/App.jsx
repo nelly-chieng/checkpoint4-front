@@ -19,7 +19,6 @@ function App() {
             <Route path="/aboutUs" component={AboutUs} />
             <Route path="/events/:id" component={EventPage} />
           </Switch>
-          <EventPage />
           <Footer />
         </BrowserRouter>
       </div>
