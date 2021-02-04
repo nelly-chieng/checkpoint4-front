@@ -1,7 +1,7 @@
 import axios from 'axios';
+import { useHistory, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { makeStyles, Paper, TableContainer } from '@material-ui/core';
+import { makeStyles, Paper } from '@material-ui/core';
 
 // Material CSS
 const useStyles = makeStyles({
@@ -35,8 +35,7 @@ const useStyles = makeStyles({
 function EventPage() {
   const { id } = useParams();
   const [spectacle, setSpectacle] = useState([]);
-  const [representations, setRepresentations] = useState([]);
-  const [isClicked, setIsClicked] = useState(false);
+  const history = useHistory();
 
   const URL_API = process.env.REACT_APP_API_URL;
   const classes = useStyles();
@@ -44,10 +43,6 @@ function EventPage() {
   useEffect(() => {
     axios.get(`${URL_API}/spectacles/${id}`).then((res) => {
       setSpectacle(res.data);
-      console.log(res.data);
-    });
-    axios.get(`${URL_API}/spectacles/city&date${id}`).then((res) => {
-      setRepresentations(res.data);
       console.log(res.data);
     });
   }, []);
@@ -66,15 +61,12 @@ function EventPage() {
           <button
             type="button"
             className={classes.button}
-            onClick={() => setIsClicked(!isClicked)}
+            onClick={() => history.push('/dates')}
           >
             Réserver
           </button>
         </div>
       </Paper>
-      <div>
-        {isClicked && <TableContainer representations={representations} />}
-      </div>
     </>
   );
 }

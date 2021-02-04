@@ -10,6 +10,7 @@ const useStyles = makeStyles({
     position: 'absolute',
     width: '100%',
     textAlign: 'right',
+    marginTop: 10,
   },
   logoWcs: {
     height: '40px',
