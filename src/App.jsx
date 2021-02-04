@@ -5,7 +5,7 @@ import Event from './components/Event';
 import EventPage from './components/EventPage';
 import Footer from './components/Footer';
 import Header from './components/Header';
-import Reservation from './components/Reservation';
+import Dates from './components/Dates';
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
           <Header />
           <Switch>
             <Route exact path="/" component={Event} />
-            <Route path="/reservation" component={Reservation} />
+            <Route path="/dates" component={Dates} />
             <Route path="/aboutUs" component={AboutUs} />
             <Route path="/event/:id" component={EventPage} />
           </Switch>

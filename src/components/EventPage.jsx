@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { useHistory, useParams } from 'react-router-dom';
-import { makeStyles, Paper } from '@material-ui/core';
+import { useParams } from 'react-router-dom';
+import { makeStyles, Paper, TableContainer } from '@material-ui/core';
 
 // Material CSS
 const useStyles = makeStyles({
@@ -34,8 +34,9 @@ const useStyles = makeStyles({
 
 function EventPage() {
   const { id } = useParams();
-  const history = useHistory();
   const [spectacle, setSpectacle] = useState([]);
+  const [representations, setRepresentations] = useState([]);
+  const [isClicked, setIsClicked] = useState(false);
 
   const URL_API = process.env.REACT_APP_API_URL;
   const classes = useStyles();
@@ -45,27 +46,36 @@ function EventPage() {
       setSpectacle(res.data);
       console.log(res.data);
     });
+    axios.get(`${URL_API}/spectacles/city&date${id}`).then((res) => {
+      setRepresentations(res.data);
+      console.log(res.data);
+    });
   }, []);
 
   return (
-    <Paper className={classes.bloc}>
-      <img
-        src={spectacle.imgXLurl}
-        alt={spectacle.name}
-        className={classes.img}
-      />
-      <div className={classes.blocDescription}>
-        <h3 className={classes.title}>{spectacle.name}</h3>
-        <p className={classes.description}> {spectacle.description}</p>
-        <button
-          type="button"
-          className={classes.button}
-          onClick={() => history.push('/reservation')}
-        >
-          Réserver
-        </button>
+    <>
+      <Paper className={classes.bloc}>
+        <img
+          src={spectacle.imgXLurl}
+          alt={spectacle.name}
+          className={classes.img}
+        />
+        <div className={classes.blocDescription}>
+          <h3 className={classes.title}>{spectacle.name}</h3>
+          <p className={classes.description}> {spectacle.description}</p>
+          <button
+            type="button"
+            className={classes.button}
+            onClick={() => setIsClicked(!isClicked)}
+          >
+            Réserver
+          </button>
+        </div>
+      </Paper>
+      <div>
+        {isClicked && <TableContainer representations={representations} />}
       </div>
-    </Paper>
+    </>
   );
 }
 
