@@ -63,7 +63,7 @@ function EventPage() {
             className={classes.button}
             onClick={() => history.push('/dates')}
           >
-            Réserver
+            Dates
           </button>
         </div>
       </Paper>

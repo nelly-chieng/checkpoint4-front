@@ -35,7 +35,7 @@ function Header() {
           centered
         >
           <Tab label="Evènements" component={Link} to="/" />
-          <Tab label="Reservation" component={Link} to="/dates" />
+          <Tab label="Dates" component={Link} to="/dates" />
           <Tab label="A propos de nous" component={Link} to="/aboutUs" />
         </Tabs>
       </div>

@@ -45,6 +45,9 @@ function Dates() {
           <TableRow className={classes.firstRow}>
             <TableCell className={classes.tableHead}>Spectacles</TableCell>
             <TableCell className={classes.tableHead} align="right">
+              Prix
+            </TableCell>
+            <TableCell className={classes.tableHead} align="right">
               Villes
             </TableCell>
             <TableCell className={classes.tableHead} align="right">
@@ -58,6 +61,7 @@ function Dates() {
               <TableCell component="th" scope="row">
                 {representation.spectacle_name}
               </TableCell>
+              <TableCell align="right">{representation.price}€</TableCell>
               <TableCell align="right">{representation.city_name}</TableCell>
               <TableCell align="right">{representation.date}</TableCell>
             </TableRow>
