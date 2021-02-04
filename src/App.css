@@ -36,3 +36,19 @@
     transform: rotate(360deg);
   }
 }
+
+.bigTitle {
+  font-family: 'Parisienne';
+  font-size: 4rem;
+}
+
+.footer {
+  position: absolute;
+  width: 100%;
+  background-color: #292f35;
+  color: white;
+}
+
+.picBg {
+  width: 100%;
+}
